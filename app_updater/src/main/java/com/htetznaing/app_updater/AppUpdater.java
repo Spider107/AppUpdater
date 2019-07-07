@@ -293,6 +293,7 @@ public class AppUpdater {
                 IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
                 activity.registerReceiver(downloadReceiver, filter);
                 Toast.makeText(activity, "Starting Download : " + fileName, Toast.LENGTH_SHORT).show();
+                new UpdateApp().execute(url);
             }else{
                 openFile(myFile.toString());
             }
